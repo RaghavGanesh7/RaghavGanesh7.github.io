@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #d6d1ee;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blurb h2 {
+ color: #000000;
+ font-weight: 100;
+ font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.blurb p {
+  color: #000000;
+  font-weight: 100;
+  font-size: 1.125rem;
+  line-height: 2;
+}
+
+.content {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#mainNavbar {
+  font-size: 1.5rem;
+  font-weight: 100;    
+}
+
+#mainNavbar .nav-link {
+  color: #000000;
+}
+
+#mainNavbar .nav-link:hover {
+  color: #EA1C2C;
+}
+
+#mainNavbar .navbar-brand {
+  color: #EA1C2C;
+  font-size: 1.5rem;
+}
+
+#headingGroup span {
+  color: #EA1C2C;
+}
+
+#headingGroup h1 {
+  font-weight: 100;
+  font-size: 4rem;
+}
+
+.navbar.scrolled {
+  background: rgb(184, 180, 241);
+  transition: background 500ms;
+}
+
+@media (max-width: 1200px) {
+  #headingGroup h1 {
+      font-weight: 100;
+      font-size: 3rem;
+  }
+  .blurb h2 {
+      font-size: 2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.social-menu ul{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  list-style-type:none;
+  padding-left: 800px;
+}
+.social-menu ul li{
+  padding: 25px;
+}
+.social-menu ul li .fa {
+  color: #000000;
+  font-size: 25px;
+  line-height: 50px;
+  transition: .5s;
+}
+
+#feed{
+  width: 90%;
+  padding-left: 10%;
+}
+
+
+
+.gallery-item
+{
+  padding-left: 20px;
+  position: relative; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon {
+  font-size: 24px;
+  text-align: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: black; 
 }
