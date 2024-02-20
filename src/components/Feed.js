@@ -3,6 +3,9 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Card } from 'antd';
+import { Image } from 'antd';
+
 
 
 export default function Feed()
@@ -37,45 +40,61 @@ export default function Feed()
         fetchInstagramPost();
     }, [])
     const settings = {
-        className: "slider variable-width",
         dots: true,
         infinite: true,
-        speed: 600,
-        centerMode: true,
-        slidesToShow: 1,
+        speed: 500,
+        slidesToShow: 2,
         slidesToScroll: 1,
         variableWidth: true
       };
+
+      const { Meta } = Card;
+
     return(
         // <div>
         //     {posts.map((feed) => (
         //        feed.media_type == "IMAGE"?<img key={feed.id} src={feed.media_url} width="500px" height="500px"></img> : ""
         //     ))}
         // </div>
-       <section id="feed" className='slider variable-width'>
+       <section id="feed">
+              <Image.PreviewGroup
+      preview={{
+        onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
+      }}
+    >
 
         <Slider {...settings}>
           {posts.map((feed) => (
-            <div class={`gallery-item` }
-            >
-            <img key={feed.id} src={feed.media_url} height="500px"
-            ></img>
-            <div className="icon" onClick={handleIconClick}>&#x2630;</div>
-            {isModalOpen && (
-          <div className="modal" onClick={handleCloseModal}>
-          {/* Your modal content goes here */}
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>
-              &times;
-            </span>
-            <p>Modal Content</p>
-          </div>
-        </div>
-      )}
-            </div>
+      //       <div class={`gallery-item` }
+      //       >
+      //       <img key={feed.id} src={feed.media_url} height="500px"
+      //       ></img>
+           
+      //       {isModalOpen && (
+      //     <div className="modal" onClick={handleCloseModal}>
+      //     {/* Your modal content goes here */}
+      //     <div className="modal-content">
+      //       <span className="close" onClick={handleCloseModal}>
+      //         &times;
+      //       </span>
+      //       <p>Modal Content</p>
+      //     </div>
+      //   </div>
+      // )}
+      //       </div>
+
+        <Card
+        className='gallery-item'
+        hoverable
+          cover = { <Image alt='image placeholder' key={feed.id} src={feed.media_url} height="500px"></Image>}
+        >
+          <Meta className='meta' title={feed.caption.length > 15 ? feed.caption.substring(0,15) + '...' : feed.caption  } description={<a href="https://www.instagram.com/raghavganesh7" class="nav-link">www.instagram.com</a>} />
+
+        </Card>
+   
         ))}
         </Slider>
-        
+        </Image.PreviewGroup>
         </section>
           
     )
