@@ -1,0 +1,108 @@
+.aboutMe {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.profileContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 2rem;
+  border-right: 1px solid #e0e0e0;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.title, .company {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialIcons a {
+  color: #0070f3;
+  font-size: 1.5rem;
+}
+
+.infoContainer {
+  flex: 2;
+  padding-left: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #0070f3;
+  margin-bottom: 1rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+.bulletPoints {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bulletPoints li {
+  margin-bottom: 0.5rem;
+}
+
+.education {
+  margin-top: 1rem;
+}
+
+.degree {
+  margin-bottom: 1rem;
+}
+
+.degree h3 {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.degree p {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .aboutMe {
+    flex-direction: column;
+  }
+
+  .profileContainer {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding-right: 0;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .infoContainer {
+    padding-left: 0;
+  }
+}

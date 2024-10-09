@@ -1,7 +1,7 @@
 export default function SocialMedia()
 {
     return(
-        <div class="social-menu" id = "contact">
+        <div className="social-menu" id = "contact">
         <ul>
           <li><a href="https://www.facebook.com/raghav.ganesh07/"><i class="fa fa-facebook fa-4x"></i></a></li>
           <li><a href="https://github.com/RaghavGanesh7"><i class="fa fa-git-square fa-4x"></i></a></li>

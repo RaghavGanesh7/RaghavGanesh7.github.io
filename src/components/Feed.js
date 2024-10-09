@@ -7,7 +7,6 @@ import { Card } from 'antd';
 import { Image } from 'antd';
 
 
-
 export default function Feed()
 {
     const [posts,setPosts] = useState([]);

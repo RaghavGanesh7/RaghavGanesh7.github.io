@@ -1,141 +1,48 @@
-html {
-  scroll-behavior: smooth;
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --light-text-color: #6c757d;
+  --border-color: #dee2e6;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #d6d1ee;
-  font-family: "Nunito", sans-serif;
-  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
-.blurb h2 {
- color: #000000;
- font-weight: 100;
- font-size: 2.5rem;
-}
-
-.blurb p {
-  color: #000000;
-  font-weight: 100;
-  font-size: 1.125rem;
-  line-height: 2;
-}
-
-.content {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-#mainNavbar {
-  font-size: 1.5rem;
-  font-weight: 100;    
-}
-
-#mainNavbar .nav-link {
-  color: #000000;
-}
-
-#mainNavbar .nav-link:hover {
-  color: #EA1C2C;
-}
-
-#mainNavbar .navbar-brand {
-  color: #EA1C2C;
-  font-size: 1.5rem;
-}
-
-#headingGroup span {
-  color: #EA1C2C;
-}
-
-#headingGroup h1 {
-  font-weight: 100;
-  font-size: 4rem;
-}
-
-.navbar.scrolled {
-  background: rgb(184, 180, 241);
-  transition: background 500ms;
-}
-
-@media (max-width: 1200px) {
-  #headingGroup h1 {
-      font-weight: 100;
-      font-size: 3rem;
-  }
-  .blurb h2 {
-      font-size: 2rem;
-  }
-}
-
-.social-menu ul{
+.App {
   display: flex;
-  list-style-type:none;
-  padding-left: 800px;
-}
-.social-menu ul li{
-  padding: 25px;
-}
-.social-menu ul li .fa {
-  color: #000000;
-  font-size: 25px;
-  line-height: 50px;
-  transition: .5s;
 }
 
-#feed{
-  width: 90%;
-  padding-left: 10%;
+main {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 250px;
 }
 
-
-
-.gallery-item
-{
-  position: relative; 
-  background-color:rgb(184, 180, 241); 
+h1, h2, h3 {
+  margin-bottom: 1rem;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+section {
+  margin-bottom: 4rem;
 }
 
-.icon {
-  font-size: 24px;
-  text-align: right;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: black; 
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.slick-initialized .slick-slide {
-  display: block;
-  margin-left: 20px;
-}
-
-.meta{
-  font-family: "Nunito", sans-serif;
-  font-style:normal;
-}
-
-.ant-card-body{
-  padding: 5px !important;
-  margin: 0px;
-}
-
-.ant-card-meta-title{
-  padding-left: 15px;
-  padding-top: 10px;
-  margin-bottom: 0px !important;
+a:hover {
+  text-decoration: underline;
 }
