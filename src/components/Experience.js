@@ -1,57 +1,79 @@
 import React from 'react';
-import styles from '../styles/experience.module.css';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../components/ui/cards";
-
-const experienceData = [
-  {
-    id: 1,
-    title: "Software Engineer",
-    company: "NFS Technology",
-    date: "March 2024 - Present",
-    location: "Pune, India",
-    responsibilities: [
-      "Spearheaded the development and maintenance of the \"Floorplan\" project",
-      "Managed all phases of the project including implementation of new features, testing, deploying, and communicating with stakeholders",
-      "Successfully managed project timelines and deliverables, maintaining high standards of quality and efficiency"
-    ]
-  },
-  {
-    id: 2,
-    title: "Junior Software Engineer",
-    company: "NFS Technology",
-    date: "September 2022 - March 2024",
-    location: "Pune, India",
-    responsibilities: [
-      "Engineered and maintained robust APIs for the Workspace project, enhancing integration and functionality across platforms",
-      "Developed a high-performance utility application using .NET and SQL, which efficiently manages the daily upload and import of over 10,000 records from the database, streamlining data operations and reliability"
-    ]
-  }
-];
+import { useState } from 'react';
+import { experience, education,skills } from '../data/info';
 
 function Experience() {
+  const [activeSection, setActiveSection] = useState('experience');
+
   return (
-    <section id="experience" className={styles.experience}>
-      <h2 className={styles.title}>Experience</h2>
-      <div className={styles.timeline}>
-        {experienceData.map((job) => (
-          <Card key={job.id} className={styles.card}>
-            <CardHeader>
-              <CardTitle className={styles.jobTitle}>{job.title}</CardTitle>
-              <p className={styles.company}>{job.company}</p>
-              <p className={styles.date}>{job.date}</p>
-              <p className={styles.location}>{job.location}</p>
-            </CardHeader>
-            <CardContent>
-              <ul className={styles.responsibilities}>
-                {job.responsibilities.map((responsibility, index) => (
-                  <li key={index}>{responsibility}</li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
+    <section>
+    <div className="flex space-x-8 mb-8 border-b dark:border-gray-700">
+      {['experience', 'education', 'skills'].map((section) => (
+        <button
+          key={section}
+          onClick={() => setActiveSection(section)}
+          className={`pb-2 capitalize ${activeSection === section
+              ? 'border-b-2 border-gray-900 dark:border-gray-100'
+              : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300'
+            }`}
+        >
+          {section}
+        </button>
+      ))}
+    </div>
+
+    <div className="space-y-8">
+      {activeSection === 'experience' && experience.map((job, index) => (
+        <div
+          key={index}
+          className="border-b dark:border-gray-700 pb-8 last:border-0 transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md p-4"
+        >
+          <h3 className="text-xl font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+            {job.role}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mt-1">
+            {job.company} · {job.period}
+          </p>
+          <p className="mt-2 text-gray-700 dark:text-gray-300">
+            {job.description}
+          </p>
+          <div className="mt-2 space-x-2">
+            {job.tech.map((tech) => (
+              <span
+                key={tech}
+                className="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full inline-block transition-transform transform hover:scale-100"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {activeSection === 'education' && education.map((edu, index) => (
+        <div key={index} className="border-b dark:border-gray-700 pb-8 last:border-0">
+          <h3 className="text-xl font-medium">{edu.degree}</h3>
+          <p className="text-gray-600 dark:text-gray-400 mt-1">
+            {edu.school} · {edu.year}
+          </p>
+          <p className="mt-2 text-gray-700 dark:text-gray-300">{edu.details}</p>
+        </div>
+      ))}
+
+      {activeSection === 'skills' && skills.map((category, index) => (
+        <div key={index} className="border-b dark:border-gray-700 pb-8 last:border-0">
+          <h3 className="text-lg font-medium mb-2">{category.category}</h3>
+          <div className="space-x-2">
+            {category.items.map((item) => (
+              <span key={item} className="text-gray-700 dark:text-gray-300">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
   );
 }
 

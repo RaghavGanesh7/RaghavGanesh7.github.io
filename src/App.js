@@ -1,28 +1,23 @@
-import './App.css';
-import './index.css';
-import  Feed from "./components/Feed";
-import Nav from './components/Nav';
+import Header from './components/Header';
 import Experience from './components/Experience';
 import SocialMedia from './components/Footer';
-import Projects from './components/Projects';
-import Achievements from './components/Achievements';
-import About from './components/About';
 
-function App() {
+const Portfolio = () => {
   return (
-    <div className="App">
-      <Nav />
-      <main>
-        <About />
-        <Experience />
-        <Projects />
-        <Achievements />
-        {/* <SocialMedia /> */}
-      </main>
-      {/* <Feed/> */}
-      
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="mx-auto px-16 py-16">
+        {/* Hero Section */}
+        <Header/>
+        {/* Main Content */}
+        <main className="space-y-16">
+          {/* Resume Section */}
+        <Experience/>
+        <SocialMedia/>
+
+        </main>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Portfolio;

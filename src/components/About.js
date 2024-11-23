@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from '../styles/about.module.css';
+import profile from '../imgs/me.jpg';
 
 function AboutMe() {
     return (
       <section className={styles.aboutMe}>
         <div className={styles.profileContainer}>
-          <img src="/path/to/your/image.jpg" alt="Raghav Ganesh" className={styles.profileImage} />
+          <img src={profile} alt="Raghav Ganesh" className={styles.profileImage} />
           <h1 className={styles.name}>Raghav Ganesh</h1>
           <p className={styles.title}>Software Engineer | Backend</p>
           <p className={styles.company}>NFS Technology</p>
